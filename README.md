@@ -16,7 +16,7 @@
     ```
     npm i
     ```
-  - ### Executar o comando
+  - ### Executar
     ```
     npm start
     ```
