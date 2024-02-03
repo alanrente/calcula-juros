@@ -5,6 +5,7 @@
 - ## Node 18.16
 
   - dotenv@16.4.1
+  - express@4.18.2
 
 - ## Instalação/Execução local
 
