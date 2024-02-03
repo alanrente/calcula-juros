@@ -6,11 +6,15 @@
 
   - dotenv@16.4.1
 
-- ## Execução local
+- ## Instalação/Execução local
 
   - ### Criar arquivo .env na raiz do projeto:
     ```
     PORT=3005
+    ```
+  - ### Instalação
+    ```
+    npm i
     ```
   - ### Executar o comando
     ```
