@@ -37,7 +37,7 @@ export function juros({
     });
 
   if (arrayRetorno.length == 0) {
-    obj.message = `O parâmetro retornos só aceita os seguintes valores: valor, qtdParcelas, taxa, montante, taxaPercentual e valorParcelas,`;
+    obj.message = `O parâmetro retornos só aceita os seguintes valores: valor, qtdParcelas, taxa, montante, taxaPercentual e valorParcelas.`;
     return obj;
   }
 
