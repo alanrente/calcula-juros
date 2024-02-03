@@ -1,12 +1,17 @@
 import dotenv from "dotenv";
-import express from "express";
-import { index } from "./app/routes/index.route.js";
+import express, { Router } from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import route from "./app/routes/index.route.js";
+import middleDebugMiddleware from "./app/middlewares/middleDebug.middleware.js";
 
 dotenv.config();
-
 const app = express();
 
-index(app);
+app.use(cors());
+app.use(bodyParser.json());
+app.use(middleDebugMiddleware);
+app.use("/", route);
 
 const { PORT } = process.env;
 
