@@ -31,18 +31,14 @@ export function juros({
     t = tempo(a)
   */
 
-  let taxaTeste = 0.12;
-  for (let index = 0; index < 12; index++) {
-    taxaTeste++;
-  }
-
-  console.log(taxaTeste);
-
   montante = +(
     montante *
     (1 + (taxaMensal ? taxaPercentual : taxaEfetiva)) **
       (periodoMensal ? qtdParcelas : qtdParcelas * 12)
   ).toFixed(2);
+
+  valorParcelas = +(montante / +qtdParcelas).toFixed(2);
+
   console.log({
     taxaEfetiva,
     taxaMensal,
@@ -50,6 +46,7 @@ export function juros({
     valor,
     taxaPercentual,
     qtdParcelas: +qtdParcelas,
+    valorParcelas,
   });
   /*
   Como calcular com aportes mensais
