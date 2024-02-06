@@ -21,14 +21,15 @@ export function juros({
     taxaEfetiva = (1 + taxaPercentual) ** (1 / 12) - 1;
 
   /*
-     Fórmula dos juros compostos
-    M = C * (1 + i)^t
+  Incluir aporte
+  Como calcular com aportes mensais
+  M = C * [(1 + i)^t – 1] / i
 
-    Onde:
-    M = montante final
-    C = capital
-    i = taxa de juros
-    t = tempo(a)
+  Onde:
+  M = montante final
+  C = aporte mensal
+  i = taxa de juros mensal
+  t = tempo em meses
   */
 
   montante = +(
@@ -48,16 +49,6 @@ export function juros({
     qtdParcelas: +qtdParcelas,
     valorParcelas,
   });
-  /*
-  Como calcular com aportes mensais
-  M = C * [(1 + i)^t – 1] / i
-
-  Onde:
-  M = montante final
-  C = aporte mensal
-  i = taxa de juros mensal
-  t = tempo em meses
-  */
 
   const arrayRetorno = [
     { valor, mostrar: retornos.includes("valor") },
