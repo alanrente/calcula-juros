@@ -40,8 +40,8 @@ export function juros({
 
   montante = +(
     montante *
-    (1 + (taxaMensal ? taxaEfetiva : taxaPercentual)) **
-      (periodoMensal ? qtdParcelas / 12 : qtdParcelas)
+    (1 + (taxaMensal ? taxaPercentual : taxaEfetiva)) **
+      (periodoMensal ? qtdParcelas : qtdParcelas * 12)
   ).toFixed(2);
   console.log({
     taxaEfetiva,
@@ -61,21 +61,6 @@ export function juros({
   i = taxa de juros mensal
   t = tempo em meses
   */
-
-  // for (let parcela = 1; parcela <= +qtdParcelas; parcela++) {
-  //   // console.log({
-  //   //   taxaMensal,
-  //   //   periodoMensal,
-  //   //   aporte,
-  //   //   montantePRECalculo: montante,
-  //   // });
-  //   montante = montante * taxaPercentual + montante + (aporte ? aporte : 0);
-
-  //   console.log({ montantePosCalculo: montante });
-  // }
-
-  // montante = Number(montante).toFixed(2);
-  // valorParcelas = Number(montante / +qtdParcelas).toFixed(2);
 
   const arrayRetorno = [
     { valor, mostrar: retornos.includes("valor") },
